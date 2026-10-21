@@ -4,95 +4,696 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>prime7 Web Studio | Malawi</title>
-  <meta name="description" content="Affordable, modern websites for Malawian businesses.">
+  <meta name="theme-color" content="#090b19">
+  <meta name="description" content="prime7 Web Studio offers web development, Android software support and Windows PC troubleshooting for customers in Malawi.">
+  <title>prime7 Web Studio | Creative Digital Solutions</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #090b19;
+      --panel: #14182c;
+      --white: #f7f8ff;
+      --muted: #b5bdd4;
+      --cyan: #54eaff;
+      --purple: #a78bfa;
+      --pink: #ff79c6;
+      --green: #25d366;
+    }
+
     * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: #f5f7ff;
-      line-height: 1.6;
+      font-family: 'Outfit', Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 5% 5%, #252052 0, transparent 35%),
+        radial-gradient(ellipse at 100% 35%, #102d46 0, transparent 32%),
+        var(--bg);
+      color: var(--white);
+      line-height: 1.7;
     }
-    header, section, footer {
-      padding: 24px;
-      max-width: 900px;
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1120px, 90%);
       margin: auto;
     }
-    header { color: #71e7ff; font-weight: bold; }
-    .hero { padding-top: 65px; padding-bottom: 65px; }
-    h1 { font-size: clamp(2.2rem, 8vw, 4rem); line-height: 1.1; }
-    .accent { color: #71e7ff; }
-    .button {
-      display: inline-block;
-      padding: 12px 18px;
-      margin-top: 12px;
-      background: #71e7ff;
-      color: #0b1020;
-      border-radius: 8px;
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #090b19ed;
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #ffffff13;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 900;
+      font-size: 1.12rem;
+      letter-spacing: -.5px;
     }
-    .card {
-      background: #171f35;
-      padding: 18px;
+
+    .logo {
+      width: 45px;
+      height: 45px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
+      color: #090b19;
+      font-size: 2rem;
+      line-height: 1;
+      font-weight: 900;
+      font-style: italic;
+      box-shadow: 0 0 24px #a78bfa55;
+      transform: skew(-5deg);
+    }
+
+    .gradient {
+      background: linear-gradient(100deg, var(--cyan), var(--purple), var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    nav a:hover { color: var(--cyan); }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 19px;
       border-radius: 12px;
-      margin: 12px 0;
+      text-decoration: none;
+      font-weight: 800;
+      background: linear-gradient(110deg, var(--cyan), var(--purple));
+      color: #080b18;
+      border: 1px solid transparent;
+      transition: transform .2s, filter .2s;
     }
-    a { color: #71e7ff; }
-    footer { color: #bac4da; }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.08);
+    }
+
+    .btn.secondary {
+      color: var(--white);
+      background: #ffffff0a;
+      border-color: #ffffff30;
+    }
+
+    .btn.whatsapp {
+      color: #062511;
+      background: var(--green);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 45px;
+      align-items: center;
+      padding-top: 78px;
+      padding-bottom: 76px;
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 4.8rem);
+      line-height: 1.06;
+      letter-spacing: -2px;
+      margin: 17px 0;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: -1px;
+      margin: 10px 0;
+    }
+
+    h3 { line-height: 1.3; }
+
+    .lead, .muted { color: var(--muted); }
+
+    .lead {
+      max-width: 560px;
+      font-size: 1.08rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-width: 0;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 28px;
+      border: 1px solid #ffffff25;
+      box-shadow: 0 20px 70px #0007;
+    }
+
+    .floating {
+      position: absolute;
+      left: -18px;
+      bottom: 22px;
+      padding: 16px 20px;
+      border-radius: 16px;
+      background: #151a30f5;
+      border: 1px solid #ffffff25;
+      box-shadow: 0 12px 35px #0006;
+    }
+
+    .floating strong {
+      display: block;
+      color: var(--cyan);
+      font-size: 1.08rem;
+    }
+
+    .floating span {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    section { padding: 64px 0; }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 28px;
+    }
+
+    .section-head p { color: var(--muted); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      overflow: hidden;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #191e36, #111527);
+      border: 1px solid #ffffff17;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #54eaff75;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 225px;
+      object-fit: cover;
+    }
+
+    .service-content { padding: 23px; }
+
+    .service-content h3 {
+      margin: 0 0 9px;
+      font-size: 1.35rem;
+    }
+
+    .service-content p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .service-content ul {
+      color: var(--muted);
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .note {
+      color: var(--muted);
+      border-left: 3px solid var(--purple);
+      background: #a78bfa12;
+      padding: 14px 17px;
+      margin-top: 22px;
+      border-radius: 6px;
+      font-size: .92rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .about-grid img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 23px;
+      border: 1px solid #ffffff22;
+    }
+
+    .features {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .feature {
+      padding: 13px 15px;
+      background: #ffffff08;
+      border: 1px solid #ffffff13;
+      border-radius: 12px;
+    }
+
+    .feature strong { color: var(--cyan); }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .demo-card {
+      padding: 23px;
+      background: #15192c;
+      border: 1px solid #ffffff18;
+      border-radius: 17px;
+    }
+
+    .demo-label {
+      color: var(--pink);
+      font-size: .78rem;
+      letter-spacing: 1px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .contact-box {
+      padding: clamp(25px, 5vw, 48px);
+      border: 1px solid #a78bfa60;
+      border-radius: 25px;
+      background:
+        radial-gradient(ellipse at 100% 0%, #a78bfa25, transparent 55%),
+        linear-gradient(125deg, #13283b, #21152e);
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .social-link {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-start;
+      padding: 18px;
+      border-radius: 15px;
+      text-decoration: none;
+      font-weight: 800;
+      background: #ffffff0b;
+      border: 1px solid #ffffff24;
+      transition: transform .2s;
+      overflow-wrap: anywhere;
+    }
+
+    .social-link:hover { transform: translateY(-3px); }
+    .social-link span { font-size: 1.5rem; }
+    .social-link small { color: var(--muted); font-weight: 400; }
+
+    footer {
+      border-top: 1px solid #ffffff17;
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    @media (max-width: 760px) {
+      .hero, .about-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; gap: 35px; }
+      .hero-visual img { height: 310px; }
+      .floating { left: 10px; bottom: 12px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .social-grid { grid-template-columns: 1fr; }
+      nav { gap: 12px; }
+      h1 { letter-spacing: -1px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header>prime7 Web Studio</header>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="prime7 Web Studio home">
+        <span class="logo">7</span>
+        <span>prime7 <span class="gradient">Web Studio</span></span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <section class="hero">
-      <p class="accent">WEB DESIGN • MALAWI</p>
-      <h1>Helping your business <span class="accent">get online.</span></h1>
-      <p>
-        Modern, mobile-friendly websites for local businesses,
-        entrepreneurs and growing brands.
-      </p>
-      <a class="button" href="#contact">Let's work together</a>
-    </section>
+    <div class="container">
+      <section class="hero" id="home">
+        <div>
+          <p class="eyebrow">Creative technology • Malawi</p>
+          <h1>Ideas into <span class="gradient">digital reality.</span></h1>
 
-    <section>
-      <h2>What I offer</h2>
-      <div class="card">
-        <h3>Business websites</h3>
-        <p>Give customers a clear place to learn about your business.</p>
-      </div>
-      <div class="card">
-        <h3>Product catalogues</h3>
-        <p>Showcase products, prices and contact details online.</p>
-      </div>
-      <div class="card">
-        <h3>Landing pages</h3>
-        <p>Promote a service, event or new product with one focused page.</p>
-      </div>
-    </section>
+          <p class="lead">
+            Welcome to prime7 Web Studio! We help businesses build
+            their online presence and provide practical Android and
+            Windows software support.
+          </p>
 
-    <section>
-      <h2>My portfolio</h2>
-      <div class="card">
-        <h3>Demo project: Local business</h3>
-        <p>A sample website concept for a Malawian small business.
-          More projects coming soon.</p>
-      </div>
-    </section>
+          <div class="actions">
+            <a class="btn whatsapp"
+               href="https://wa.me/265985320166?text=Hello%20prime7%20Web%20Studio%2C%20I%27d%20like%20to%20make%20an%20inquiry."
+               target="_blank" rel="noopener noreferrer">
+              💬 Chat on WhatsApp
+            </a>
+            <a class="btn secondary" href="#services">
+              Explore services ↓
+            </a>
+          </div>
+        </div>
 
-    <section id="contact">
-      <h2>Let's build your online presence</h2>
-      <p>Have a business idea? Get in touch to discuss your website.</p>
-      <p>Email: <a href="mailto: 7avageprime@gmail.com">
-        7avageprime@gmail.com</a></p>
-    </section>
+        <div class="hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85"
+            alt="A computer workstation used for web development"
+            fetchpriority="high">
+          <div class="floating">
+            <strong>Web • Android • Windows</strong>
+            <span>Practical digital solutions for Malawi</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="section-head">
+          <p class="eyebrow">What we can help with</p>
+          <h2>Technology made <span class="gradient">simpler.</span></h2>
+          <p>
+            Whether you're growing a business or solving a software
+            problem, let's find a practical solution for you.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+              alt="Website analytics displayed on a computer screen"
+              loading="lazy">
+            <div class="service-content">
+              <h3>🌐 Web Development</h3>
+              <p>Give your business a professional home on the internet.</p>
+              <ul>
+                <li>Business websites and landing pages</li>
+                <li>Personal portfolios</li>
+                <li>Product and service catalogues</li>
+                <li>Mobile-friendly website designs</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+              alt="Smartphone representing Android software support"
+              loading="lazy">
+            <div class="service-content">
+              <h3>📱 Android Software Support</h3>
+              <p>Practical help with common Android software problems.</p>
+              <ul>
+                <li>App errors and software troubleshooting</li>
+                <li>Phone setup and configuration</li>
+                <li>Software updates and app installation</li>
+                <li>Storage optimisation and data transfers</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=900&q=80"
+              alt="Desktop computer for PC and Windows support"
+              loading="lazy">
+            <div class="service-content">
+              <h3>💻 PC & Windows Support</h3>
+              <p>Get help diagnosing and resolving computer software issues.</p>
+              <ul>
+                <li>Windows troubleshooting</li>
+                <li>Software and driver installation</li>
+                <li>Performance and startup optimisation</li>
+                <li>Basic malware checks and cleanup</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+              alt="Digital work and online collaboration"
+              loading="lazy">
+            <div class="service-content">
+              <h3>✨ Digital Assistance</h3>
+              <p>Support with everyday technology and online tasks.</p>
+              <ul>
+                <li>Software setup and configuration</li>
+                <li>Basic digital troubleshooting</li>
+                <li>Help getting devices ready to use</li>
+                <li>Website updates and improvements</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <p class="note">
+          Services are subject to assessment and capability. We currently
+          focus on software support, not hardware repairs. iPhone/iOS
+          services are not offered. Please back up important data before
+          major software changes; some fixes may carry a risk of data loss.
+        </p>
+      </section>
+
+      <section id="about">
+        <div class="about-grid">
+          <div>
+            <p class="eyebrow">A local digital ambition</p>
+            <h2>Small ideas. <span class="gradient">Big possibilities.</span></h2>
+            <p class="muted">
+              prime7 Web Studio is building practical digital services
+              for Malawian businesses and everyday technology users.
+              Our focus is clear communication, useful solutions and
+              websites that work well on phones.
+            </p>
+
+            <div class="features">
+              <div class="feature">
+                <strong>01 — Mobile-friendly</strong><br>
+                Websites designed for phone and computer screens.
+              </div>
+              <div class="feature">
+                <strong>02 — Clear communication</strong><br>
+                Discuss your needs before work begins.
+              </div>
+              <div class="feature">
+                <strong>03 — Practical solutions</strong><br>
+                Services tailored to the project and problem.
+              </div>
+            </div>
+          </div>
+
+          <img
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80"
+            alt="A team collaborating on a digital project"
+            loading="lazy">
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <div class="section-head">
+          <p class="eyebrow">Our work</p>
+          <h2>A showcase of <span class="gradient">possibilities.</span></h2>
+          <p>
+            Explore the types of projects prime7 Web Studio can develop.
+            Demo concepts are examples, not claims of completed client work.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="demo-card">
+            <span class="demo-label">Demo concept</span>
+            <h3>🏪 Small Business Website</h3>
+            <p class="muted">
+              A welcoming online presence for a local shop, with services,
+              business details and simple contact options.
+            </p>
+          </article>
+
+          <article class="demo-card">
+            <span class="demo-label">Demo concept</span>
+            <h3>🍽️ Restaurant Website</h3>
+            <p class="muted">
+              A sample restaurant page featuring a menu, food photography,
+              location details and contact information.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-box">
+          <p class="eyebrow">Let's connect</p>
+          <h2>Have an idea? <span class="gradient">Let's talk.</span></h2>
+          <p class="muted">
+            Need a website or help with Android or Windows software?
+            Send us a message on your preferred platform.
+          </p>
+
+          <div class="social-grid">
+            <a class="social-link"
+               href="https://wa.me/265985320166"
+               target="_blank" rel="noopener noreferrer">
+              <span>💬</span>
+              WhatsApp Business
+              <small>Chat with prime7 ↗</small>
+            </a>
+
+            <a class="social-link"
+               href="https://www.instagram.com/prime7web?exln=NWdpeXh2dnY0NGI2"
+               target="_blank" rel="noopener noreferrer">
+              <span>📸</span>
+              Instagram
+              <small>See our profile ↗</small>
+            </a>
+
+            <a class="social-link"
+               href="https://www.facebook.com/share/1ZGcFsdjh2/"
+               target="_blank" rel="noopener noreferrer">
+              <span>📘</span>
+              Facebook
+              <small>Visit our page ↗</small>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer>
-    © 2026 prime7 Web Studio. Built with HTML and CSS.
+    <div class="container footer-row">
+      <a class="brand" href="#home">
+        <span class="logo">7</span>
+        <span>prime7 <span class="gradient">Web Studio</span></span>
+      </a>
+
+      <div>
+        <p>Creative web development and software support in Malawi.</p>
+        <p>© 2026 prime7 Web Studio. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
